@@ -1,0 +1,4 @@
+cd /Users/magnus/workspace/garminexport
+./garminbackup.py mag_dex@o2.pl --password XXXXXXXXX
+cd /Users/magnus/workspace/garmin2orgmode
+ln -s ../garminexport/activities activities
