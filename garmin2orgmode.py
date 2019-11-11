@@ -112,7 +112,8 @@ if __name__ == '__main__':
     if cycling:
         print('* Sport Bike')
         for e in cycling:
-                print(e)
+           print(e)
+
     hr()
 
     if running:
@@ -120,5 +121,3 @@ if __name__ == '__main__':
 
         for e in running:
             print(e)
-
-        print(running)
