@@ -50,3 +50,13 @@ then run the script garmin2orgmode.py for the activities folder created by garmi
 
 The log file will be created so the save activities will not be uploaded more times.
 
+TODO
+------------------------------------------
+
+- right now you have to copy-paste OrgMode entries from the terminal, this should be automatized soon
+
+Requirements
+------------------------------------------
+
+[garminexport](https://github.com/petergardfjall/garminexport)
+
