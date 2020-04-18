@@ -21,6 +21,8 @@ def get_parser():
                         action="store_true", help="be verbose")
     parser.add_argument("-d", "--debug",
                         action="store_true", help="be verbose")
+    parser.add_argument("-n", "--no-log",
+                        action="store_true", help="be verbose")
     parser.add_argument("-f", "--force",
                         action="store_true", help="be verbose")
     parser.add_argument("--calendar", help="Send event to this Apple Calendar",
@@ -98,8 +100,9 @@ if __name__ == '__main__':
                 cycling.append(entry)
             if 'Running' in data['activityName']:
                 running.append(entry)
-            log = open(logfn, 'a')
-            log.write(entrylog + '\n')
+            if not args.no_log:
+                log = open(logfn, 'a')
+                log.write(entrylog + '\n')
         else:
             #if args.verbose:
             print('- already in your calendar: ' + entrylog)
