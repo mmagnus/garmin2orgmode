@@ -12,7 +12,7 @@ os.environ['TZ'] = 'Europe/Warsaw'
 time.tzset()
 
 from datetime import date, timedelta
-
+from conf import ENTRY_LEVEL
 
 def get_parser():
     parser = argparse.ArgumentParser(
@@ -89,7 +89,7 @@ if __name__ == '__main__':
             txt = ' ' + str(int(data['summaryDTO']['calories'])) + ' kcal ' + \
                          '' + str(int(data['summaryDTO']['movingDuration']/60)) + \
                          '/'+ str(int(data['summaryDTO']['duration']/60)) + ' min'
-            entry = '** ' + data['activityName'] + txt + ' [' + date + ']\n'
+            entry = ENTRY_LEVEL + ' ' + data['activityName'] + txt + ' [' + date + ']\n'
             entry += '   :LOGBOOK:\n     CLOCK: [' + start2 + ']--[' + end2 + '] => ' + \
               '{:01d}:{:02d}'.format(*divmod(dur_in_min, 60)) + '\n   :END:'
             #print(entry)
