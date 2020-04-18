@@ -46,7 +46,8 @@ if __name__ == '__main__':
 
     cycling = []        
     running = []
-
+    pushups = []
+    
     try:
         log = open(logfn)
     except:
@@ -100,6 +101,9 @@ if __name__ == '__main__':
                 cycling.append(entry)
             if 'Running' in data['activityName']:
                 running.append(entry)
+            if 'push ups' in data['activityName']:
+                pushups.append(entry)
+
             if not args.no_log:
                 log = open(logfn, 'a')
                 log.write(entrylog + '\n')
@@ -124,3 +128,9 @@ if __name__ == '__main__':
 
         for e in running:
             print(e)
+
+    if pushups:
+        print('* Push ups')
+        for e in pushups:
+            print(e)
+
