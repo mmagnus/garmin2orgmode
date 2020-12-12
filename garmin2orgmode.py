@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 import json
 import argparse
 import datetime
@@ -101,7 +102,7 @@ if __name__ == '__main__':
                 cycling.append(entry)
             if 'Running' in data['activityName']:
                 running.append(entry)
-            if 'push ups' in data['activityName']:
+            if 'Push-ups' in data['activityName']:
                 pushups.append(entry)
 
             if not args.no_log:
@@ -115,13 +116,11 @@ if __name__ == '__main__':
 
     def hr():
         print('-' * 80)
-        
+
     if cycling:
         print('* Sport Bike')
         for e in cycling:
            print(e)
-
-    hr()
 
     if running:
         print('* Sport Run')
@@ -130,7 +129,7 @@ if __name__ == '__main__':
             print(e)
 
     if pushups:
-        print('* Push ups')
+        print('* Push-ups')
         for e in pushups:
             print(e)
 
